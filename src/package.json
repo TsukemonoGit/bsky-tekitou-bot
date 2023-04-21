@@ -1,0 +1,15 @@
+{
+  "name": "bsky-tekitou-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "TsukemonoGit",
+  "license": "MIT",
+  "dependencies": {
+    "@atproto/api": "^0.2.7"
+  }
+}

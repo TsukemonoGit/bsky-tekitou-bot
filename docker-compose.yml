@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  src:
+    build: ./docker
+    container_name: bsky-tekitou-bot
+    volumes:
+      - ./src:/var/src
+    tty: true
+    environment:
+      MYID: ${MYID}
+      PASS: ${PASS}
+
+    command: /bin/bash
