@@ -1,0 +1,29 @@
+name: postTekitou
+
+on: 
+  workflow_dispatch:
+
+jobs:
+  app:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v3
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+
+    - name: Install dependencies
+      run: npm install
+      working-directory: src
+
+
+    - name: Run index.js
+      run: node index.js
+      working-directory: src
+      env:
+        MYID: ${{ secrets.MYID }}
+        PASS: ${{ secrets.PASS }}
+      timeout-minutes: 2
+
