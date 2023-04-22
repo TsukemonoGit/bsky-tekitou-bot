@@ -2,10 +2,21 @@ import bsky from '@atproto/api'
 const { BskyAgent } = bsky;
 
 const textData = {
+    t1159: '----ごはんごはん----',
     t1200: '----ごはんごはん----',
+    t1201: '----ごはんごはん----',
+
+    t1459: '----おやつおやつ----',
     t1500: '----おやつおやつ----',
+    t1501: '----おやつおやつ----',
+    
+    t1959: '----はちじはちじ----',
     t2000: '----はちじはちじ----',
-    t2222: ['ᓚᘏᗨ', 'ᓭᘣᗢ', 'ᗢᕡᓗ', 'ᓚᘏᗢ', 'ᓕᘎᗣ', 'ᗣᘎᓓ']
+    t2001: '----はちじはちじ----',
+    
+    t2221: ['ᓚᘏᗨ', 'ᓭᘣᗢ', 'ᗢᕡᓗ', 'ᓚᘏᗢ', 'ᓕᘎᗣ', 'ᗣᘎᓓ'],
+    t2222: ['ᓚᘏᗨ', 'ᓭᘣᗢ', 'ᗢᕡᓗ', 'ᓚᘏᗢ', 'ᓕᘎᗣ', 'ᗣᘎᓓ'],
+    t2223: ['ᓚᘏᗨ', 'ᓭᘣᗢ', 'ᗢᕡᓗ', 'ᓚᘏᗢ', 'ᓕᘎᗣ', 'ᗣᘎᓓ']
 
 }
 
@@ -15,15 +26,15 @@ const agent = new BskyAgent({ service: 'https://bsky.social' });
 
 console.log(process.env.MYID);
 console.log(process.env.PASS);
-console.log(process.env.TIME);
-// myData = await Login();
-// //console.log(myData.handle);
+console.log(getText());
+myData = await Login();
+//console.log(myData.handle);
 
-// if (myData != null) {
-//     const text = getText();
-//     console.log(text)
-//     await PostText(text);
-// }
+if (myData != null) {
+    const text = getText();
+    console.log(text)
+    await PostText(text);
+}
 
 
 //------------------------------
@@ -59,7 +70,6 @@ async function PostText(text) {
 }
 function getText() {
     const date = new Date(Date.now() + ((new Date().getTimezoneOffset() + (9 * 60)) * 60 * 1000));
-
     const hour = (date.getHours()).toString().padStart(2, '0')
     const min = (date.getMinutes()).toString().padStart(2, '0');
     const checkText = `t${hour}${min}`

@@ -4,12 +4,6 @@ on:
   workflow_dispatch:
 
 jobs:
-  inputs:
-    tag:
-        description: 'Test scenario tags'
-        required: true
-        type: string
-  app:
     runs-on: ubuntu-latest
 
     steps:
@@ -30,6 +24,5 @@ jobs:
       env:
         MYID: ${{ secrets.MYID }}
         PASS: ${{ secrets.PASS }}
-        TIME: ${{inputs.tag}}
       timeout-minutes: 2
 
