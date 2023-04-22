@@ -24,15 +24,15 @@ let myData = null;
 const agent = new BskyAgent({ service: 'https://bsky.social' });
 
 
-console.log(process.env.MYID);
-console.log(process.env.PASS);
+//console.log(process.env.MYID);
+//console.log(process.env.PASS);
 
 myData = await Login();
 //console.log(myData.handle);
 
 if (myData != null) {
     const text = getText();
-    console.log(text)
+    //console.log(text)
     await PostText(text);
 }
 
@@ -47,7 +47,7 @@ async function Login() {
         });
 
         console.log('success?:' + success)
-        console.log(data);
+     //   console.log(data);
         if (success) { return data; }
 
         return null;
