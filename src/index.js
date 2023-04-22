@@ -15,14 +15,15 @@ const agent = new BskyAgent({ service: 'https://bsky.social' });
 
 console.log(process.env.MYID);
 console.log(process.env.PASS);
-myData = await Login();
-//console.log(myData.handle);
+console.log(process.env.TIME);
+// myData = await Login();
+// //console.log(myData.handle);
 
-if (myData != null) {
-    const text = getText();
-    console.log(text)
-    await PostText(text);
-}
+// if (myData != null) {
+//     const text = getText();
+//     console.log(text)
+//     await PostText(text);
+// }
 
 
 //------------------------------
