@@ -1,9 +1,13 @@
 # bsky-tekitou-bot
 
-Github Actions の workflow(postTekitou.yml) をCloudflareCronから起動して
+Github Actions の workflow(postTekitou.yml) を、
+
+Cloudflare Workers の Cronから起動して
+
 Blueskyのアカウントから垂れ流すだけ
 
-### 参考 [Workflows](https://docs.github.com/ja/rest/actions/workflows?apiVersion=2022-11-28 "Github Workflows"), [octokit](https://github.com/octokit/core.js#readme "octokit")
+
+#### 参考 [Workflows](https://docs.github.com/ja/rest/actions/workflows?apiVersion=2022-11-28 "Github Workflows"), [octokit](https://github.com/octokit/core.js#readme "octokit")
 
 (cloudflare側のコード)
 
@@ -29,3 +33,14 @@ await octokit.request('POST /repos/TsukemonoGit/bsky-tekitou-bot/actions/workflo
     })
 }
 ```
+
+
+#### 設定
+- リポジトリのsetting → Actions→General 
+
+    → Workflow permissionsをRead and write permissions にしてsave
+
+- Github のsetting → Developper settings → Personal access tokens 
+
+    → Generate new token で Repository access に該当リポジトリを追加してその他諸々設定してtoken発行
+
