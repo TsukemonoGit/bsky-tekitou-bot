@@ -1,4 +1,7 @@
+このごはんもいれてとか、このおやつも入れてとかあったらプルリクください
+
 # bsky-tekitou-bot
+
 
 Github Actions の workflow(postTekitou.yml) を、
 
