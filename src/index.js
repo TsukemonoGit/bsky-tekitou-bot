@@ -79,7 +79,7 @@ function getText() {
     try {
         teiki = textData[checkText];
         if (Array.isArray(teiki)) {
-            teiki = teiki[Math.floor(Math.random() * teiki.length)];
+            teiki = teiki[Math.floor(Math.random() * teiki.length)]+teiki[Math.floor(Math.random() * teiki.length)]+teiki[Math.floor(Math.random() * teiki.length)];
         }
     } catch {
         teiki = `${hour}時${min}分かも`
