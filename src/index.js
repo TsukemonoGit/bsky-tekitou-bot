@@ -14,10 +14,15 @@ const textData = {
     t2000: '----はちじはちじ----',
     t2001: '----はちじはちじ----',
     
-    t2221: ['ᓚᘏᗨ', 'ᓭᘣᗢ', 'ᗢᕡᓗ', 'ᓚᘏᗢ', 'ᓕᘎᗣ', 'ᗣᘎᓓ'],
+   // t2221: ['ᓚᘏᗨ', 'ᓭᘣᗢ', 'ᗢᕡᓗ', 'ᓚᘏᗢ', 'ᓕᘎᗣ', 'ᗣᘎᓓ'],
+   // t2222: ['ᓚᘏᗨ', 'ᓭᘣᗢ', 'ᗢᕡᓗ', 'ᓚᘏᗢ', 'ᓕᘎᗣ', 'ᗣᘎᓓ'],
+   // t2223: ['ᓚᘏᗨ', 'ᓭᘣᗢ', 'ᗢᕡᓗ', 'ᓚᘏᗢ', 'ᓕᘎᗣ', 'ᗣᘎᓓ']
+    t2221: [ ['ᗢ','ᗣ','ᗤ','ᗥ','ᗦ','ᗧ','ᗨ','ᗩ','ᗪ','ᗫ','ᗬ','ᗭ'],
+    ['ᕞ','ᕟ','ᕂ','ᕃ','ᕄ','ᕅ','ᕆ','ᕇ','ᕈ','ᕉ','ᕊ','ᕋ','ᕌ','ᕍ','ᕠ','ᕡ','ᕢ','ᕣ'],
+    ['ᓗ','ᓚ','ᓭ','ᓕ','ᓓ','ᖊ','ᕃ']],
     t2222: ['ᓚᘏᗨ', 'ᓭᘣᗢ', 'ᗢᕡᓗ', 'ᓚᘏᗢ', 'ᓕᘎᗣ', 'ᗣᘎᓓ'],
     t2223: ['ᓚᘏᗨ', 'ᓭᘣᗢ', 'ᗢᕡᓗ', 'ᓚᘏᗢ', 'ᓕᘎᗣ', 'ᗣᘎᓓ']
-
+    
 }
 
 let myData = null;
@@ -79,10 +84,20 @@ function getText() {
     try {
         teiki = textData[checkText];
         if (Array.isArray(teiki)) {
+            if(Array.isArray(teiki[0])){
+                teiki = teiki[0][Math.floor(Math.random() * teiki.length)]+teiki[1][Math.floor(Math.random() * teiki.length)]+teiki[2][Math.floor(Math.random() * teiki.length)];
+            }else{
             teiki = teiki[Math.floor(Math.random() * teiki.length)]+teiki[Math.floor(Math.random() * teiki.length)]+teiki[Math.floor(Math.random() * teiki.length)];
         }
+    }
     } catch {
-        teiki = `${hour}時${min}分かも`
+        //teiki = `${hour}時${min}分かも`
+        teiki = textData[t2221];
+        if (Array.isArray(teiki)) {
+            if(Array.isArray(teiki[0])){
+                teiki = teiki[0][Math.floor(Math.random() * teiki.length)]+teiki[1][Math.floor(Math.random() * teiki.length)]+teiki[2][Math.floor(Math.random() * teiki.length)];}
+            }
+        
     }
     if(teiki==null){  teiki = `${hour}時${min}分かも`}
     return teiki;
