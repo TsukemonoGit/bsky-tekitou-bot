@@ -99,7 +99,14 @@ function getText() {
             }
         
     }
-    if(teiki==null){  teiki = `${hour}時${min}分かも`}
+    if(teiki==null){  
+        //teiki = `${hour}時${min}分かも`
+        teiki = textData[t2221];
+        if (Array.isArray(teiki)) {
+            if(Array.isArray(teiki[0])){
+                teiki = teiki[0][Math.floor(Math.random() * teiki.length)]+teiki[1][Math.floor(Math.random() * teiki.length)]+teiki[2][Math.floor(Math.random() * teiki.length)];}
+            }
+    }
     return teiki;
 }
 
